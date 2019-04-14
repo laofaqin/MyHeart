@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Happy Birthday^_^</title>
+	</head>
+	<body>
+		<div id="miaosha"> </div>
+		<script type="text/javascript">
+			function add(i){
+				if(i<10){
+					i = "0"+i;
+				}
+				return i;
+			}
+			
+			function timer(){
+				var date1 = new Date("2019-8-11 00:00:00");
+				var date2 = new Date();
+				var ss = Math.floor((date1-date2)/1000);
+				
+				var day = Math.floor(ss/3600/24);
+				var hour = Math.floor(ss/3600%24);
+				var min  = Math.floor(ss/60%60);
+				var sec = Math.floor(ss%60);
+				
+				hour = add(hour);
+				min = add(min);
+				sec = add(sec);
+				
+				miaosha.innerHTML = "这位可爱的杨章羽姑娘，距离你的生日还有"+day+"天"+hour+"时"+min+"分"+sec+"秒";
+				
+				if(ss<=0){
+					clearInterval(ms);
+					miaosha.innerHTML = "亲爱的杨章羽姑娘，生日快乐鸭！！！^_^<br/>如果你现在是我的女朋友，那么恭喜，你将会收到一份生日礼物^_^<br>如果小生福薄，没有这个机会与你相伴余生，依旧祝你生日快乐哈哈哈。愿君快乐依旧,感谢这些天纯真的你带给我的心动。";
+				}
+			}
+			var ms = setInterval(timer,1000);
+			
+		</script>
+	</body>
+</html>
